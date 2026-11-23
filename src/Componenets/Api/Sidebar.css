@@ -1,0 +1,104 @@
+.Api_Fetching {
+  position: relative;
+}
+
+.Api_Fetching .Sidebar {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 12px);
+  left: 0;
+  width: min(280px, calc(100vw - 40px));
+  padding: 22px 14px 16px;
+  box-sizing: border-box;
+  color: #e9edff;
+  background: linear-gradient(165deg, #202b49 0%, #151e36 100%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  box-shadow: 0 22px 50px rgba(19, 29, 54, 0.28);
+  animation: sidebar-enter 180ms ease-out both;
+}
+
+.Api_Fetching .Sidebar > .Api_fetching {
+  padding: 4px 12px 18px;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+}
+
+.Api_Fetching .Sidebar ul {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.Api_Fetching .Sidebar li a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 12px;
+  color: #c5cce0;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  font-size: 0.94rem;
+  font-weight: 550;
+  text-decoration: none;
+  transition: color 150ms ease, background 150ms ease, border-color 150ms ease, padding 150ms ease;
+}
+
+.Api_Fetching .Sidebar li .Sidebar_link {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  color: #c5cce0;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  font: inherit;
+  font-size: 0.94rem;
+  font-weight: 550;
+  text-align: left;
+  cursor: pointer;
+  transition: color 150ms ease, background 150ms ease, border-color 150ms ease, padding 150ms ease;
+}
+
+.Api_Fetching .Sidebar li a:hover,
+.Api_Fetching .Sidebar li a:focus-visible,
+.Api_Fetching .Sidebar li .Sidebar_link:hover,
+.Api_Fetching .Sidebar li .Sidebar_link:focus-visible {
+  padding-left: 16px;
+  color: #fff;
+  background: rgba(112, 132, 255, 0.17);
+  border-color: rgba(145, 160, 255, 0.16);
+  outline: none;
+}
+
+.Api_Fetching .Sidebar li a:focus-visible,
+.Api_Fetching .Sidebar li button:focus-visible {
+  box-shadow: inset 0 0 0 2px rgba(157, 170, 255, 0.55);
+}
+
+@keyframes sidebar-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-7px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 760px) {
+  .Api_Fetching .Sidebar {
+    top: calc(100% + 10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Api_Fetching .Sidebar {
+    animation: none;
+  }
+}

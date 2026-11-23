@@ -1,0 +1,462 @@
+
+.Contact_list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  min-height: 420px;
+  margin-top: 28px;
+  padding: 22px 28px 28px;
+  box-sizing: border-box;
+  background: #f6f7fa;
+  border-radius: 18px;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.Contact_search {
+  position: relative;
+  flex: 1 1 300px;
+  min-width: 220px;
+  max-width: 390px;
+  margin-right: auto;
+}
+
+.Contact_search input {
+  width: 100%;
+  height: 46px;
+  padding: 0 44px;
+  box-sizing: border-box;
+  color: #3d4655;
+  background: #fff;
+  border: 1px solid #e7eaf0;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+.Contact_search input::placeholder {
+  color: #98a1b2;
+}
+
+.Contact_search input:focus {
+  border-color: #9b82d9;
+  box-shadow: 0 0 0 4px rgba(139, 116, 220, 0.12);
+}
+
+.Contact_search-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  color: #98a1b2;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.Contact_clear-search {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  padding: 0;
+  color: #747d8e;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.Contact_clear-search:hover {
+  color: #5d48a4;
+  background: #f2effa;
+}
+
+/* New contact button */
+.Contact_list > .Add_Contact {
+  height: 46px;
+  min-width: 138px;
+  margin-left: auto;
+  padding: 0 18px;
+  color: #fff;
+  background: #9873d6;
+  border: 0;
+  border-radius: 24px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.Contact_list > .Add_Contact:hover {
+  background: #8762c8;
+  transform: translateY(-1px);
+}
+
+.Contact_results {
+  width: 100%;
+}
+
+.Contact_results-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 16px;
+}
+
+.Contact_results-heading h2 {
+  margin: 0;
+  color: #252d3b;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.Contact_results-heading > span {
+  color: #8992a2;
+  font-size: 13px;
+}
+
+.Contact_search-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 16px;
+  color: #71619e;
+  font-size: 13px;
+}
+
+.Contact_search-status svg {
+  flex: 0 0 auto;
+  animation: searchSpin 900ms linear infinite;
+}
+
+/* Contact grid */
+.Contact_grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.Contact_skeleton-card {
+  display: flex;
+  position: relative;
+  min-height: 260px;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px 24px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #edf0f5;
+  border-radius: 18px;
+}
+
+.Contact_skeleton-card::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.75) 48%, transparent 76%);
+  content: '';
+  transform: translateX(-100%);
+  animation: skeletonShimmer 1.35s ease-in-out infinite;
+}
+
+.Contact_skeleton-card > span {
+  display: block;
+  background: #eceef4;
+  border-radius: 999px;
+}
+
+.Contact_skeleton-menu {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  width: 24px;
+  height: 8px;
+}
+
+.Contact_skeleton-avatar {
+  width: 106px;
+  height: 106px;
+  margin-bottom: 15px;
+  border: 6px solid #f3f4f8;
+  border-radius: 50%;
+}
+
+.Contact_skeleton-name {
+  width: 68%;
+  height: 15px;
+  margin-bottom: 9px;
+}
+
+.Contact_skeleton-company {
+  width: 46%;
+  height: 11px;
+}
+
+.Contact_skeleton-actions {
+  width: 138px;
+  height: 38px;
+  margin-top: 21px;
+  background: #f1eff8 !important;
+}
+
+@keyframes skeletonShimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes searchSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Contact_empty-state {
+  display: flex;
+  min-height: 240px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  text-align: center;
+  background: #fff;
+  border: 1px dashed #dfe3ec;
+  border-radius: 16px;
+}
+
+.Contact_empty-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  color: #8973c2;
+  background: #f2effa;
+  border-radius: 50%;
+}
+
+.Contact_empty-state h3 {
+  margin: 14px 0 5px;
+  color: #252d3b;
+  font-size: 16px;
+}
+
+.Contact_empty-state p {
+  margin: 0;
+  color: #8992a2;
+  font-size: 13px;
+}
+
+.Contact_empty-state button {
+  margin-top: 16px;
+  padding: 8px 13px;
+  color: #7159b5;
+  background: #f2effa;
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.Contact_empty-state button:hover {
+  background: #e9e3f7;
+}
+
+/* Individual card */
+.Contacts {
+  position: relative;
+  width: 100%;
+  min-height: 260px;
+  box-sizing: border-box;
+  padding: 18px 20px 24px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #edf0f5;
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(38, 52, 78, 0.08);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.Contacts:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(38, 52, 78, 0.12);
+}
+
+/* Menu button */
+.Contact_menu {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  padding: 0;
+  color: #667085;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.Contact_menu:hover {
+  background: #f3f5f8;
+}
+
+/* Delete dropdown */
+.Contact_dropdown {
+  position: absolute;
+  top: 48px;
+  right: 12px;
+  z-index: 10;
+  min-width: 120px;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(38, 52, 78, 0.14);
+  animation: menuOpen 150ms ease;
+}
+
+.Contact_dropdown button {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  color: #e5484d;
+  background: transparent;
+  border: 0;
+  border-radius: 7px;
+  text-align: left;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.Contact_dropdown button:hover {
+  background: #fff0f0;
+}
+
+@keyframes menuOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Avatar */
+.Contact_avatar {
+  position: relative;
+  width: 118px;
+  height: 118px;
+  margin: 12px auto 8px;
+}
+
+.Contact_avatar img {
+  width: 118px;
+  height: 118px;
+  object-fit: cover;
+  border: 6px solid #eef1f6;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+/* Online status */
+.Contact_status {
+  position: absolute;
+  right: 8px;
+  bottom: 12px;
+  width: 16px;
+  height: 16px;
+  background: #29b76a;
+  border: 4px solid #fff;
+  border-radius: 50%;
+}
+
+/* Name and company */
+.Name h1 {
+  margin: 7px 0 3px;
+  color: #1f2533;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 750;
+}
+
+.Name p {
+  margin: 0;
+  color: #8a919e;
+  font-size: 14px;
+}
+
+/* Action buttons */
+.Contact_actions {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.Contact_actions button {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  padding: 0;
+  color: #8c74dc;
+  background: #fff;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 7px 18px rgba(82, 69, 133, 0.09);
+  cursor: pointer;
+  transition: transform 160ms ease, color 160ms ease, background 160ms ease;
+}
+
+.Contact_actions button:hover {
+  color: #fff;
+  background: #9b82d9;
+  transform: translateY(-2px);
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .Contact_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+  .Contact_list {
+    gap: 16px;
+    padding: 18px 10px;
+  }
+
+  .Contact_search {
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  .Contact_list > .Add_Contact {
+    margin-left: 0;
+  }
+
+  .Contact_grid {
+    grid-template-columns: 1fr;
+  }
+}
